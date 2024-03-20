@@ -1,0 +1,18 @@
+@startuml
+participant Main
+participant FirModel
+participant Window
+participant Fir
+participant FirProgress
+
+Main -> FirModel: Create FirModel
+Main -> Window: Create Window
+Main -> Fir: Create Fir threads
+activate Fir
+loop each Fir thread
+    Fir -> FirModel: setProgress
+    FirModel -> Fir: Progress notification
+    Fir -> Window: Update progress bar
+end
+deactivate Fir
+@enduml

@@ -1,0 +1,19 @@
+@startuml
+
+[*] --> ProducerIdle
+
+ProducerIdle --> Producing : produceTask
+Producing --> ProducerIdle : taskProduced
+Producing --> Producing : wait
+
+ProducerIdle --> [*] : stop
+
+[*] --> ConsumerIdle
+
+ConsumerIdle --> Consuming : consumeTask
+Consuming --> ConsumerIdle : taskConsumed
+Consuming --> Consuming : wait
+
+ConsumerIdle --> [*] : stop
+
+@enduml

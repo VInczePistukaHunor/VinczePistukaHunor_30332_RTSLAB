@@ -1,0 +1,14 @@
+@startuml
+start
+:Create FileService instance;
+:Create RThread instance;
+:Create WThread instance;
+:Start RThread;
+:Start WThread;
+:Loop until stop;
+:Read message from file;
+:Print message;
+:Write random message to file;
+:End loop;
+stop
+@enduml

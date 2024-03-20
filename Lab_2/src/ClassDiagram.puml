@@ -1,0 +1,38 @@
+@startuml
+class Fir {
+    - int id
+    - FirModel model
+    - int processorLoad
+    + Fir(int id, int priority, FirModel model, int procLoad)
+    + run()
+}
+class FirProgress {
+    - int id
+    - int progress
+    + FirProgress(int id, int progress)
+    + getId()
+    + getProgress()
+}
+class FirModel {
+    - int[] progressValues
+    + FirModel(int nrThreads)
+    + setProgress(int id, int progress)
+}
+class Main {
+    - final int noOfThreads
+    - final int processorLoad
+    + main(String[] args)
+}
+class Window {
+    - ArrayList<JProgressBar> bars
+    + Window(int nrThreads, FirModel model)
+    + init(int n)
+    + update(Observable o, Object arg)
+}
+Fir --* FirModel
+FirProgress --* FirModel
+Main --> Fir
+Main --> FirModel
+Main --> Window
+FirModel --> Window
+@enduml

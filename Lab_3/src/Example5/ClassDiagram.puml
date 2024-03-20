@@ -1,0 +1,22 @@
+@startuml
+
+class Main {
+    + main(String args[])
+}
+
+class WriteThread {
+    - PipedOutputStream po
+    + run()
+    + getPipe(): PipedOutputStream
+}
+
+class ReadThread {
+    - PipedInputStream pi
+    + run()
+    + connect(PipedOutputStream os)
+}
+
+Main --> WriteThread
+Main --> ReadThread
+
+@enduml

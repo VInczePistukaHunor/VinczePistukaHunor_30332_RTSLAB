@@ -1,0 +1,24 @@
+@startuml
+
+participant Main
+participant WriteThread
+participant ReadThread
+
+Main -> WriteThread: create wt
+Main -> ReadThread: create rt
+Main -> WriteThread: conect(po)
+Main -> ReadThread: connect(pi)
+
+activate WriteThread
+WriteThread -> WriteThread: run()
+WriteThread -> WriteThread: po.write(d)
+WriteThread -> WriteThread: sleep(400)
+deactivate WriteThread
+
+activate ReadThread
+ReadThread -> ReadThread: run()
+ReadThread -> ReadThread: pi.available()
+ReadThread -> ReadThread: pi.read()
+deactivate ReadThread
+
+@enduml

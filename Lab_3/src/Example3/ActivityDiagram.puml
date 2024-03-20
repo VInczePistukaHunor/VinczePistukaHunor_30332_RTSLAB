@@ -1,0 +1,18 @@
+@startuml
+
+start
+:Thread 1 started;
+:Calculate dividers for number 50000;
+:Store sum in sumOfDividers;
+:Thread 1 finished;
+if (sumOfDividers == 0) then (yes)
+  :Wait for sumOfDividers to be set by Thread 1;
+else (no)
+  :Calculate dividers for number 20000;
+  :Add to sumOfDividers;
+  :Thread 2 finished;
+endif
+:Total sum of dividers: sumOfDividers;
+stop
+
+@enduml

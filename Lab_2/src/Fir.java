@@ -18,7 +18,11 @@ public class Fir extends Thread {
                 j--;
             }
             c++;
-            model.setProgress(id, c);
+            try {
+                model.setProgress(id, c);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
         }
     }
 }

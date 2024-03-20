@@ -1,0 +1,16 @@
+@startuml
+
+[*] --> Thread1Start
+Thread1Start --> Thread1Run : start
+Thread1Run --> Thread1End : finish
+Thread1End --> [*]
+
+Thread1Run --> Thread2Start : sumOfDividers set
+Thread2Start --> Thread2Run : start
+Thread2Run --> Thread2Wait : sumOfDividers not set
+Thread2Wait --> Thread2Run : sumOfDividers set
+Thread2Run --> Thread2End : finish
+Thread2End --> TotalSum
+TotalSum --> [*]
+
+@enduml

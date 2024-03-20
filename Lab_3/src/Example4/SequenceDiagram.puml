@@ -1,0 +1,45 @@
+@startuml
+
+actor User
+participant ThreadGroupDemo
+
+User -> ThreadGroupDemo: main(String args[])
+activate ThreadGroupDemo
+
+ThreadGroupDemo -> ThreadGroupDemo: Create ThreadGroup
+ThreadGroupDemo -> ThreadGroupDemo: Create ThreadEx #1
+ThreadGroupDemo -> ThreadGroupDemo: Create ThreadEx #2
+ThreadGroupDemo -> ThreadGroupDemo: Create ThreadEx #3
+
+User -> ThreadGroupDemo: sleep(1000)
+
+activate ThreadEx #1
+ThreadGroupDemo -> ThreadEx #1: start()
+deactivate ThreadEx #1
+User -> ThreadGroupDemo: sleep(1000)
+
+activate ThreadEx #2
+ThreadGroupDemo -> ThreadEx #2: start()
+deactivate ThreadEx #2
+User -> ThreadGroupDemo: sleep(1000)
+
+activate ThreadEx #3
+ThreadGroupDemo -> ThreadEx #3: start()
+deactivate ThreadEx #3
+User -> ThreadGroupDemo: sleep(1000)
+
+User -> ThreadGroupDemo: sleep(1000)
+
+ThreadGroupDemo -> ThreadGroupDemo: Get active thread count
+ThreadGroupDemo -> ThreadGroupDemo: Enumerate active threads
+
+User -> ThreadGroupDemo: sleep(1000)
+
+ThreadGroupDemo -> ThreadEx #1: stopThread()
+
+User -> ThreadGroupDemo: sleep(1000)
+
+ThreadGroupDemo -> ThreadGroupDemo: Get active thread count
+ThreadGroupDemo -> ThreadGroupDemo: Interrupt thread group
+
+@enduml

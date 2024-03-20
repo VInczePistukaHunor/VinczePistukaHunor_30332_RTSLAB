@@ -25,9 +25,10 @@ public class FirModel extends Observable {
         progressValues = new int[nrThreads];
     }
 
-    public void setProgress(int id, int progress) {
+    public void setProgress(int id, int progress) throws InterruptedException {
         progressValues[id] = progress;
         setChanged();
         notifyObservers(new FirProgress(id, progress));
+        Thread.sleep(100);
     }
 }

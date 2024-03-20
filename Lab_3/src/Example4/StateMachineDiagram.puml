@@ -1,0 +1,12 @@
+@startuml
+
+[*] --> ThreadExOn
+
+ThreadExOn --> ThreadExRun : start
+ThreadExRun --> ThreadExEnd : finish
+ThreadExRun --> ThreadExRun : sleep(250)
+
+ThreadExRun --> ThreadExOn : stop is true
+ThreadExEnd --> ThreadExOn
+
+@enduml

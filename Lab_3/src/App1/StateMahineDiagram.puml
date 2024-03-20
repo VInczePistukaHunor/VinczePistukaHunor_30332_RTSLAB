@@ -1,0 +1,19 @@
+@startuml
+
+[*] --> NotRunning
+
+state NotRunning {
+    [*] --> Stopped
+    Stopped --> Running : Start threads
+}
+
+state Running {
+    [*] --> Active
+    Active --> Paused : Pause threads
+    Paused --> Active : Resume threads
+    Active --> Stopped : Stop threads
+}
+
+Running --> NotRunning : Stop threads
+
+@enduml

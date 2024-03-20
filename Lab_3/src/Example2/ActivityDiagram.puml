@@ -1,0 +1,25 @@
+@startuml
+
+start
+
+:Create Buffer instance;
+:Create Producer instance;
+:Create Consumer instances;
+
+:Start Producer thread;
+:Start Consumer threads;
+
+while (true) is (Producer loop)
+    :Generate random value;
+    :Put value into Buffer;
+    :Sleep for 1 second;
+endwhile
+
+while (true) is (Consumer loop)
+    :Get value from Buffer;
+    :Print received value;
+endwhile
+
+stop
+
+@enduml
