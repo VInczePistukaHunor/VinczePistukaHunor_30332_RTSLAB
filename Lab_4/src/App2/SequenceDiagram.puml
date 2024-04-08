@@ -1,0 +1,38 @@
+@startuml
+
+participant Main
+participant "ExecutionThread 1" as Thread1
+participant "ExecutionThread 2" as Thread2
+
+Main -> Thread1: new ExecutionThread(monitor, monitor2, 4, 4, 2, 4, 4, 6).start()
+Main -> Thread2: new ExecutionThread(monitor2, monitor, 5, 5, 3, 5, 5, 7).start()
+
+activate Thread1
+Thread1 -> Main: << create >>
+Thread1 -> Thread1: run()
+Thread1 -> Thread1: print STATE 1
+Thread1 -> Thread1: perform activity 1
+Thread1 -> monitor: synchronize
+Thread1 -> Thread1: print STATE 2
+Thread1 -> Thread1: perform activity 2
+Thread1 -> monitor2: synchronize
+Thread1 -> Thread1: print STATE 3
+Thread1 -> Thread1: sleep
+Thread1 -> Thread1: print STATE 4
+deactivate Thread1
+
+activate Thread2
+Thread2 -> Main: << create >>
+Thread2 -> Thread2: run()
+Thread2 -> Thread2: print STATE 1
+Thread2 -> Thread2: perform activity 1
+Thread2 -> monitor2: synchronize
+Thread2 -> Thread2: print STATE 2
+Thread2 -> Thread2: perform activity 2
+Thread2 -> monitor: synchronize
+Thread2 -> Thread2: print STATE 3
+Thread2 -> Thread2: sleep
+Thread2 -> Thread2: print STATE 4
+deactivate Thread2
+
+@enduml

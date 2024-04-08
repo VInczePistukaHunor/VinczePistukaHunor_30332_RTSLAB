@@ -1,11 +1,11 @@
 @startuml
 
 class ExecutionThread {
-    - Integer monitor
-    - int sleep_min
-    - int sleep_max
-    - int activity_min
-    - int activity_max
+    ~ Integer monitor
+    ~ int sleep_min
+    ~ int sleep_max
+    ~ int activity_min
+    ~ int activity_max
     --
     + ExecutionThread(Integer monitor, int sleep_min, int sleep_max, int activity_min, int activity_max)
     + run(): void

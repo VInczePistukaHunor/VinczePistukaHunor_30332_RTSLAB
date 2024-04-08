@@ -1,0 +1,20 @@
+@startuml
+
+[*] --> ExecutionThread1_STATE1
+state ExecutionThread1_STATE1 {
+    [*] --> sleep
+    sleep --> STATE2 : sleep
+    STATE2 --> [*] : finish
+}
+
+state ExecutionThread2_STATE1 {
+    [*] --> waitNotify
+    waitNotify --> STATE1 : activate
+    STATE1 --> STATE2 : continue
+    STATE2 --> [*] : finish
+}
+
+[*] --> ExecutionThread2_STATE1
+
+@enduml
+

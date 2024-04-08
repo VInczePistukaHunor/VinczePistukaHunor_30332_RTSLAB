@@ -1,0 +1,60 @@
+@startuml
+
+!define ExecutionThreadStyle << (S,#ADD8E6) >>
+!define MainStyle << (S,#FFA07A) >>
+
+skinparam participant {
+    BackgroundColor ExecutionThreadStyle
+    BorderColor black
+    FontColor black
+}
+
+skinparam participant {
+    BackgroundColor MainStyle
+    BorderColor black
+    FontColor black
+}
+
+participant Main as Main
+participant ExecutionThread as ET1
+participant ExecutionThread as ET2
+participant ExecutionThread as ET3
+
+Main -> ET1: new ExecutionThread(monitor,3,6,5).start()
+Main -> ET2: new ExecutionThread(monitor,4,7,3).start()
+Main -> ET3: new ExecutionThread(monitor,5,7,6).start()
+
+activate ET1
+activate ET2
+activate ET3
+
+loop Forever
+    ET1 -> ET1: run()
+    ET1 -> Main: Thread 1 - STATE 1
+    Main -> ET1: synchronized (monitor)
+    ET1 -> Main: Thread 1 - STATE 2
+    Main -> ET1: Processing activity
+    Main -> ET1: Thread 1 - STATE 3
+    Main -> ET1: Sleeping
+    Main -> ET1: Thread 1 - STATE 4
+
+    ET2 -> ET2: run()
+    ET2 -> Main: Thread 2 - STATE 1
+    Main -> ET2: synchronized (monitor)
+    ET2 -> Main: Thread 2 - STATE 2
+    Main -> ET2: Processing activity
+    Main -> ET2: Thread 2 - STATE 3
+    Main -> ET2: Sleeping
+    Main -> ET2: Thread 2 - STATE 4
+
+    ET3 -> ET3: run()
+    ET3 -> Main: Thread 3 - STATE 1
+    Main -> ET3: synchronized (monitor)
+    ET3 -> Main: Thread 3 - STATE 2
+    Main -> ET3: Processing activity
+    Main -> ET3: Thread 3 - STATE 3
+    Main -> ET3: Sleeping
+    Main -> ET3: Thread 3 - STATE 4
+end
+
+@enduml

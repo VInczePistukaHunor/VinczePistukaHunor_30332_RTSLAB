@@ -1,11 +1,31 @@
 @startuml
-'https://plantuml.com/sequence-diagram
 
-autonumber
+participant Main
+participant ExecutionThread
 
-Alice -> Bob: Authentication Request
-Bob --> Alice: Authentication Response
+Main -> ExecutionThread: new ExecutionThread(monitor,monitor, 4, 4, 2, 4).start()
+Main -> ExecutionThread: new ExecutionThread(monitor,monitor2, 3, 3, 2, 6).start()
 
-Alice -> Bob: Another authentication Request
-Alice <-- Bob: another authentication Response
+activate ExecutionThread
+
+ExecutionThread -> ExecutionThread: run()
+ExecutionThread -> Main: Thread 1 - STATE 1
+Main -> ExecutionThread: synchronized (monitor)
+ExecutionThread -> Main: Thread 1 - STATE 2
+Main -> ExecutionThread: synchronized (monitor2)
+ExecutionThread -> Main: Thread 1 - STATE 3
+Main -> ExecutionThread: Processing activity
+Main -> ExecutionThread: Sleeping
+Main -> ExecutionThread: Thread 1 - STATE 4
+
+ExecutionThread -> ExecutionThread: run()
+ExecutionThread -> Main: Thread 2 - STATE 1
+Main -> ExecutionThread: synchronized (monitor)
+ExecutionThread -> Main: Thread 2 - STATE 2
+Main -> ExecutionThread: synchronized (monitor2)
+ExecutionThread -> Main: Thread 2 - STATE 3
+Main -> ExecutionThread: Processing activity
+Main -> ExecutionThread: Sleeping
+Main -> ExecutionThread: Thread 2 - STATE 4
+
 @enduml

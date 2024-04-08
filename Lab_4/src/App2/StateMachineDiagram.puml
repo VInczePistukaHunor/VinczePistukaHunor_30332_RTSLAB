@@ -1,0 +1,14 @@
+@startuml
+
+[*] --> STATE1
+
+STATE1: - print STATE 1\n- perform activity 1
+STATE1 --> STATE2: acquire P9
+STATE2: - print STATE 2\n- perform activity 2
+STATE2 --> STATE3: Release P9,acquire P10
+STATE3: - print STATE 3
+STATE3 --> STATE4: sleep, release P10
+STATE4: - print STATE 4
+STATE4 --> [*]
+
+@enduml

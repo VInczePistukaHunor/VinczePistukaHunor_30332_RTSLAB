@@ -1,24 +1,29 @@
 @startuml
-'https://plantuml.com/state-diagram
 
-scale 350 width
-[*] --> NotShooting
+[*] --> STATE_1
 
-state NotShooting {
-  [*] --> Idle
-  Idle --> Configuring : EvConfig
-  Configuring --> Idle : EvConfig
+state STATE_1 {
+    STATE_1 --> STATE_2: Thread Start
 }
 
-state Configuring {
-  [*] --> NewValueSelection
-  NewValueSelection --> NewValuePreview : EvNewValue
-  NewValuePreview --> NewValueSelection : EvNewValueRejected
-  NewValuePreview --> NewValueSelection : EvNewValueSaved
-
-  state NewValuePreview {
-     State1 -> State2
-  }
-
+state STATE_2 {
+    STATE_2 --> STATE_3: synchronized (monitor)
 }
+
+state STATE_3 {
+    STATE_3 --> STATE_4: synchronized (monitor2)
+}
+
+state STATE_4 {
+    STATE_4 --> STATE_5: Processing activity
+}
+
+state STATE_5 {
+    STATE_5 --> STATE_6: Sleeping
+}
+
+state STATE_6 {
+    STATE_6 --> STATE_1: Thread End
+}
+
 @enduml

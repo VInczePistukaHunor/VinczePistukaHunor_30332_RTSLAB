@@ -1,0 +1,21 @@
+@startuml
+
+[*] --> Waiting
+
+state Waiting {
+    Waiting --> AcquiringLock: synchronized (monitor)
+}
+
+state AcquiringLock {
+    AcquiringLock --> Processing: Lock Acquired
+}
+
+state Processing {
+    Processing --> Sleeping: Processing Complete
+}
+
+state Sleeping {
+    Sleeping --> Waiting: Sleep Complete
+}
+
+@enduml

@@ -5,29 +5,33 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dbba5d54-ba53-4567-8547-a0f29923bdc0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab_4.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Lab_4/App1/SequenceDiagram.puml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Lab_4/App1/StateMachineDiagram.puml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Lab_4/Example1/ClassDiagram.puml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Lab_4/Example1/ExecutionThread.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Lab_4/Example1/Main.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Lab_4/Example1/SequenceDiagram.puml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Lab_4/Main.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/App1/ExecutionThread1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/App1/ExecutionThread2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/App1/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/App1/SequenceDiagram.puml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/App1/StateMachineDiagram.puml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Example1/ClassDiagram.puml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Example1/ExecutionThread.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Example1/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Example1/SequenceDiagram.puml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_3/src/App1/FileService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_3/src/App1/FileService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/App1/ExecutionThread.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/App2/ExecutionThread.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/App2/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/App2/SequenceDiagram.puml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/App2/StateMachineDiagram.puml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/App3/ExecutionThread.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/App3/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/App3/SequenceDiagram.puml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/App3/StateMachineDiagram.puml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/App4/ExecutionThread1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/App4/ExecutionThread2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/App4/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/App4/SequenceDiagram.puml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/App4/StateMachineDiagram.puml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab_4/App1/ExecutionThread1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab_4/App1/ExecutionThread2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab_4/App1/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab_4/App1/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab_4/App1/SequenceDiagram.puml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab_4/App1/SequenceDiagram.puml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab_4/App1/StateMachineDiagram.puml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab_4/App1/StateMachineDiagram.puml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab_4/Example1/ClassDiagram.puml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab_4/Example1/ClassDiagram.puml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App1/ExecutionThread1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App1/ExecutionThread2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App1/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/App1/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App1/SequenceDiagram.puml" beforeDir="false" afterPath="$PROJECT_DIR$/src/App1/SequenceDiagram.puml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App1/StateMachineDiagram.puml" beforeDir="false" afterPath="$PROJECT_DIR$/src/App1/StateMachineDiagram.puml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Example1/ClassDiagram.puml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Example1/ClassDiagram.puml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,9 +41,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="UML Class" />
         <option value="UML State" />
         <option value="UML Sequence" />
-        <option value="UML Class" />
         <option value="Class" />
       </list>
     </option>
@@ -62,7 +66,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "DefaultPlantUmlFileTemplate": "UML Class",
+    "DefaultPlantUmlFileTemplate": "UML Sequence",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",

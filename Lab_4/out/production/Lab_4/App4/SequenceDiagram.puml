@@ -1,0 +1,27 @@
+@startuml
+
+participant Main
+participant ExecutionThread1
+participant ExecutionThread2
+
+Main -> ExecutionThread1: start()
+activate ExecutionThread1
+Main -> ExecutionThread2: start()
+activate ExecutionThread2
+Main -> ExecutionThread2: start()
+activate ExecutionThread2
+
+ExecutionThread1 -> ExecutionThread2: waitNotify()
+activate ExecutionThread2
+ExecutionThread2 -> ExecutionThread1: activate
+
+ExecutionThread2 -> ExecutionThread1: waitNotify()
+activate ExecutionThread1
+ExecutionThread1 -> ExecutionThread2: activate
+
+ExecutionThread1 --> ExecutionThread2: STATE 1
+ExecutionThread1 --> ExecutionThread2: STATE 2
+ExecutionThread2 --> ExecutionThread1: STATE 1
+ExecutionThread2 --> ExecutionThread1: STATE 2
+
+@enduml
