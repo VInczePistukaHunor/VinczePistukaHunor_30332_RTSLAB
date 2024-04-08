@@ -1,0 +1,30 @@
+@startuml
+
+participant Main
+participant ExecutionThread1
+participant ExecutionThread2
+
+Main -> ExecutionThread1: Start thread 1
+Main -> ExecutionThread2: Start thread 2
+
+activate ExecutionThread1
+ExecutionThread1 -> ExecutionThread1: STATE1
+ExecutionThread1 -> ExecutionThread1: Sleep for random time
+ExecutionThread1 -> ExecutionThread1: STATE2
+ExecutionThread1 -> ExecutionThread1: Acquire monitor lock
+ExecutionThread1 -> ExecutionThread1: STATE3
+ExecutionThread1 -> ExecutionThread1: Execute activity
+ExecutionThread1 -> ExecutionThread1: STATE4
+ExecutionThread1 -> ExecutionThread1: Terminate
+
+activate ExecutionThread2
+ExecutionThread2 -> ExecutionThread2: STATE1
+ExecutionThread2 -> ExecutionThread2: Sleep for random time
+ExecutionThread2 -> ExecutionThread2: STATE2
+ExecutionThread2 -> ExecutionThread2: Acquire monitor lock
+ExecutionThread2 -> ExecutionThread2: STATE3
+ExecutionThread2 -> ExecutionThread2: Execute activity
+ExecutionThread2 -> ExecutionThread2: STATE4
+ExecutionThread2 -> ExecutionThread2: Terminate
+
+@enduml

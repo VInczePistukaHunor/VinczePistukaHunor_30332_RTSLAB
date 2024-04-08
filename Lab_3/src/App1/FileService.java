@@ -25,7 +25,8 @@ public class FileService {
         }
     }
 
-    public synchronized void write(String msg) {
+    public void write(String msg) {
+        syncronized {
         Date date = new Date(System.currentTimeMillis());
         out.println("Date: " + date);
         out.println("Message: " + msg);

@@ -1,0 +1,21 @@
+@startuml
+
+class ExecutionThread {
+    - Integer monitor
+    - int sleep_min
+    - int sleep_max
+    - int activity_min
+    - int activity_max
+    --
+    + ExecutionThread(Integer monitor, int sleep_min, int sleep_max, int activity_min, int activity_max)
+    + run(): void
+}
+
+class Main {
+    --
+    + main(String[] args): void
+}
+
+ExecutionThread "1" -- "*" Main
+
+@enduml
